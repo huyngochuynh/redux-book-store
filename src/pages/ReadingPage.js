@@ -1,10 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import { Container, Button, Box, Card, Stack, CardMedia, CardActionArea, Typography, CardContent } from "@mui/material";
 import { ClipLoader } from "react-spinners";
 import { useNavigate } from "react-router-dom";
-import { toast } from "react-toastify";
 import { useDispatch, useSelector } from "react-redux";
-import { useParams } from "react-router-dom";
 import { fetchFavorites, removeFavorite, setRemovedBookId } from "../store/bookSlice";
 
 const BACKEND_API = process.env.REACT_APP_BACKEND_API;
@@ -17,7 +15,7 @@ const ReadingPage = () => {
   const dispatch = useDispatch();
   // const params = useParams();
   // const bookId = params.id;
-  const { bookList, loading, errorMessage, removedBookId  } = useSelector(state => state.books);
+  const { bookList, loading,  removedBookId  } = useSelector(state => state.books);
   const navigate = useNavigate()
 
   const handleClickBook = (bookId) => {
