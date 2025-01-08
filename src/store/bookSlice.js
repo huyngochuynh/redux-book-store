@@ -17,7 +17,7 @@ export const getBookDetails = createAsyncThunk(
       const response = await api.get(
           `http://localhost:5000/books/${bookId}`
         ); 
-      return response.data; 
+      return response.data;
   });
 
   export const fetchFavorites = createAsyncThunk(
